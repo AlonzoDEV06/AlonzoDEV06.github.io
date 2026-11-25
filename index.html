@@ -227,7 +227,8 @@
 
       /* Terminal Card */
       .terminal {
-        flex: 1 1 380px;
+        flex: 1 1 480px;
+        max-width: 560px;
         min-width: 0;
         background: var(--surface);
         border: 1px solid var(--border-card);
@@ -259,11 +260,19 @@
       }
 
       .terminal-body {
-        padding: 20px;
+        padding: 20px 22px;
         font-family: var(--font-mono);
-        font-size: 14px;
+        font-size: 13.5px;
         line-height: 1.8;
-        overflow-x: auto;
+      }
+
+      .cmd-prompt {
+        white-space: nowrap;
+      }
+
+      .cmd-output {
+        white-space: normal;
+        overflow-wrap: break-word;
       }
 
       .cmd-line {
@@ -572,16 +581,16 @@
               <span class="terminal-title">alonzo@cpnv: ~</span>
             </div>
             <div class="terminal-body">
-              <div class="cmd-line"><span class="prompt">$</span> whoami</div>
-              <div class="cmd-line" style="color: var(--text-bright)">Alonzo Pinto</div>
+              <div class="cmd-line cmd-prompt"><span class="prompt">$</span> whoami</div>
+              <div class="cmd-line cmd-output" style="color: var(--text-bright)">Alonzo Pinto</div>
 
               <div class="cmd-line cmd-prompt"><span class="prompt">$</span> cat parcours.txt</div>
-              <div class="cmd-line" style="color: var(--text-muted)">
-                CFC Développement (CPNV) → MP2 TASI → HEIG-VD Cybersécurité
+              <div class="cmd-line cmd-output" style="color: var(--text-muted)">
+                CFC CPNV → MP2 TASI → HEIG-VD Cybersécurité
               </div>
 
               <div class="cmd-line cmd-prompt"><span class="prompt">$</span> ls stack/</div>
-              <div class="cmd-line" style="color: var(--link)">
+              <div class="cmd-line cmd-output" style="color: var(--link)">
                 vue.js/ node.js/ javascript/ sql/ python/ docker/
               </div>
 
